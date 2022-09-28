@@ -5,7 +5,7 @@
   const { getOwner } = require("discourse-common/lib/get-owner");
   const topicController = getOwner(this).lookup("controller:topic");
 
-  api.modifyClass('component:topic-timeline', {
+  api.modifyClass('component:timeline-scrollarea-wrapper', {
     
     clickButtonScrollUp() {
       topicController.send('jumpTop');
@@ -37,10 +37,10 @@
     }
   });
   
-  api.decorateWidget('topic-timeline:after', function(helper) {
+  api.decorateWidget('timeline-scrollarea-wrapper:after', function(helper) {
     return helper.attach('scroll-up-button');
   });
-  api.decorateWidget('topic-timeline:before', function(helper) {
+  api.decorateWidget('timeline-scrollarea-wrapper:before', function(helper) {
     return helper.attach('scroll-down-button');
   });
   
