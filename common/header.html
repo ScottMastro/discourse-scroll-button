@@ -30,14 +30,14 @@
   api.createWidget('scroll-down-button', {
     tagName: 'button.btn.btn-default.discourse-scroll-down-button',
     html(attrs, state) {
-      return h('span', [iconNode('arrow-up')] );
+      return h('span', [iconNode('arrow-down')] );
     },
     click() {
-      this.sendWidgetAction('clickButtonScrollUp');
+      this.sendWidgetAction('clickButtonScrollDown');
     }
   });
   
-    api.decorateWidget('topic-timeline:after', function(helper) {
+  api.decorateWidget('topic-timeline:after', function(helper) {
     return helper.attach('scroll-up-button');
   });
   api.decorateWidget('topic-timeline:after', function(helper) {
