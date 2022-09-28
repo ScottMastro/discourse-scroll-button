@@ -16,7 +16,7 @@
     
   });
   
-  api.modifyClass('component:topic-progress', {
+  api.modifyClass('component:topic-progress-wrapper', {
     
     clickButtonScrollUp() {
       topicController.send('jumpTop');
@@ -54,10 +54,10 @@
     return helper.attach('scroll-down-button');
   });
   
-    api.decorateWidget('topic-progress:before', function(helper) {
+    api.decorateWidget('topic-progress-wrapper:before', function(helper) {
     return helper.attach('scroll-up-button');
   });
-  api.decorateWidget('topic-progress:before', function(helper) {
+  api.decorateWidget('topic-progress-wrapper:before', function(helper) {
     return helper.attach('scroll-down-button');
   });
   
