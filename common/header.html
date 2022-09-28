@@ -16,17 +16,7 @@
     
   });
   
-  api.modifyClass('component:before-topic-progress', {
-    
-    clickButtonScrollUp() {
-      topicController.send('jumpTop');
-    },
-    clickButtonScrollDown() {
-      topicController.send('jumpBottom');
-    }
-    
-  });
-  
+
   api.createWidget('scroll-up-button', {
     tagName: 'widget-button.btn.btn-default.discourse-scroll-up-button.no-text.btn-icon',
     html(attrs, state) {
@@ -51,13 +41,6 @@
     return helper.attach('scroll-up-button');
   });
   api.decorateWidget('timeline-footer-controls:before', function(helper) {
-    return helper.attach('scroll-down-button');
-  });
-  
-    api.decorateWidget('before-topic-progress:before', function(helper) {
-    return helper.attach('scroll-up-button');
-  });
-  api.decorateWidget('before-topic-progress:before', function(helper) {
     return helper.attach('scroll-down-button');
   });
   
