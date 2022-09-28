@@ -5,21 +5,17 @@
   const { getOwner } = require("discourse-common/lib/get-owner");
   const topicController = getOwner(this).lookup("controller:topic");
 
-  api.modifyClass('component:timeline-controls', {
+  api.modifyClass('component:topic-timeline', {
     
     clickButtonScrollUp() {
       topicController.send('jumpTop');
-    }
-    
-  });
-  
-  api.modifyClass('component:timeline-footer-controls', {
-    
+    },
     clickButtonScrollDown() {
       topicController.send('jumpBottom');
     }
     
   });
+  
   
 
 
