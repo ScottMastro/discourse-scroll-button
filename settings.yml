@@ -1,0 +1,12 @@
+scroll_button_enabled:
+  default: true
+  client: true
+
+last_viewed_button_enabled:
+  default: true
+  client: true
+
+svg_icons: 
+  default: 'bell|bell-slash'
+  type: list
+  description: Additional FontAwesome 5 icons
