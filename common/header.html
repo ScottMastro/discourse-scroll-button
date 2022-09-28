@@ -28,9 +28,9 @@
       this.sendWidgetAction('clickButtonScrollUp');
     }
   });
-  
+  widget-button btn btn-default create reply-to-post 
   api.createWidget('scroll-down-button', {
-    tagName: 'button.btn.btn-default.discourse-scroll-down-button',
+    tagName: 'widget-button.btn.btn-default.discourse-scroll-down-button.no-text.btn-icon',
     html(attrs, state) {
       return h('span', [iconNode('arrow-down')] );
     },
