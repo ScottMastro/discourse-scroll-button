@@ -9,13 +9,19 @@
     
     clickButtonScrollUp() {
       topicController.send('jumpTop');
-    },
+    }
+    
+  });
+  
+  api.modifyClass('component:timeline-footer-controls', {
+    
     clickButtonScrollDown() {
       topicController.send('jumpBottom');
     }
     
   });
   
+
 
   api.createWidget('scroll-up-button', {
     tagName: 'button.btn.btn-default.discourse-scroll-up-button',
@@ -40,7 +46,7 @@
   api.decorateWidget('timeline-controls:before', function(helper) {
     return helper.attach('scroll-up-button');
   });
-  api.decorateWidget('timeline-controls:after', function(helper) {
+  api.decorateWidget('timeline-footer-controls:after', function(helper) {
     return helper.attach('scroll-down-button');
   });
   
