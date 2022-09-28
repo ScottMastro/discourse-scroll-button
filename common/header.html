@@ -6,45 +6,17 @@
   const topicController = getOwner(this).lookup("controller:topic");
 
   api.modifyClass('component:topic-timeline', {
-    toggleMute() {
-      if (this.get("topic.details.notification_level") > 0) {
-        return ajax("/t/" + this.get("topic.id") + "/notifications", {
-          type: "POST",
-          data: {
-            notification_level: 0
-          }
-        });
-        
-      } else {
-        return ajax("/t/" + this.get("topic.id") + "/notifications", {
-          type: "POST",
-          data: {
-            notification_level: 1
-          }
-        });
-        
-      }
-    },
     
     clickButtonScrollUp() {
       topicController.send('jumpTop');
+    },
+    clickButtonScrollDown() {
+      topicController.send('jumpBottom');
     }
     
   });
   
-  api.createWidget('mute-button', {
-    tagName: 'button.btn.btn-default.discourse-mute-button',
-    html(attrs, state) {
-      if (this.attrs.notificationLevel > 0) {
-        return h('span', [iconNode('bell-slash'),"Mute"], );
-      } else {
-        return h('span', [iconNode('bell'),"Unmute"], );
-      }
-    },
-    click() {
-      this.sendWidgetAction('toggleMute');
-    }
-  });
+
   api.createWidget('scroll-up-button', {
     tagName: 'button.btn.btn-default.discourse-scroll-up-button',
     html(attrs, state) {
@@ -55,11 +27,21 @@
     }
   });
   
-  api.decorateWidget('topic-timeline:after', function(helper) {
-    return helper.attach('mute-button');
+  api.createWidget('scroll-down-button', {
+    tagName: 'button.btn.btn-default.discourse-scroll-down-button',
+    html(attrs, state) {
+      return h('span', [iconNode('arrow-up')] );
+    },
+    click() {
+      this.sendWidgetAction('clickButtonScrollUp');
+    }
   });
+  
     api.decorateWidget('topic-timeline:after', function(helper) {
     return helper.attach('scroll-up-button');
+  });
+  api.decorateWidget('topic-timeline:after', function(helper) {
+    return helper.attach('scroll-down-button');
   });
   
 </script>
