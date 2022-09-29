@@ -46,38 +46,20 @@
 
   
   api.registerTopicFooterButton({
-    id: "discourse-to-top-button",
+    id: "discourse-jump-button",
     icon: "arrow-up",
+    priority: 0,
     
     translatedLabel() {
-      return settings.to_top_button_label;
+      return settings.jump_button_label;
     },
     translatedTitle() {
-      return settings.to_top_button_title;
+      return settings.jump_button_title;
     },    
     action() {
       topicController.send('jumpTop');
     },
-
-
-    // is this button displayed in the mobile dropdown or as an inline button ?
-    dropdown: false,
-
-    // css class appended to the button
-    classNames: [],
-
-    // computed properties which should force a button state refresh
-    // eg: ["topic.bookmarked", "topic.category_id"]
-    dependentKeys: [],
-
-    // should we display this button ?
-    displayed: true,
-
-    // is this button disabled ?
-    disabled: false,
-
-    // display order, higher comes first
-    priority: 0
+    classNames: ["discourse-jump-button"],
   });
   
   

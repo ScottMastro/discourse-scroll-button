@@ -6,11 +6,11 @@ last_viewed_button_enabled:
   default: true
   client: true
 
-to_top_button_label:
-  default: "To Top"
+jump_button_label:
+  default: "Jump"
   client: true
   
-to_top_button_title:
+jump_button_title:
   default: "jump to the top of this topic"
   client: true
   
