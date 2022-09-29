@@ -5,20 +5,6 @@
   const { getOwner } = require("discourse-common/lib/get-owner");
   const topicController = getOwner(this).lookup("controller:topic");
 
-  
-    api.modifyClass('component:before-topic-progress', {
-    
-    clickButtonScrollUp() {
-      topicController.send('jumpTop');
-    },
-    clickButtonScrollDown() {
-      topicController.send('jumpBottom');
-    }
-    
-  });
-
-
-
   api.createWidget('scroll-up-button', {
     tagName: 'widget-button.btn.btn-default.discourse-scroll-up-button.no-text.btn-icon',
     html(attrs, state) {
@@ -69,7 +55,7 @@
 </script>
 
 
-<script type="text/x-handlebars" data-template-name="/connectors/before-topic-progress/testeroni">
+<script type="text/x-handlebars" data-template-name="/connectors/before-topic-progress/mobile-scroll-buttons">
   {{mount-widget widget="scroll-up-button"}}
   {{mount-widget widget="scroll-down-button"}}
 
