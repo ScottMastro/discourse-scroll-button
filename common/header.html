@@ -70,7 +70,18 @@
 
 
 <script type="text/x-handlebars" data-template-name="/connectors/before-topic-progress/testeroni">
-<button class="widget-button btn btn-default popup-menu-button no-text btn-icon mobile-scroll-arrow mobile-scroll-arrow-down"
+
+    clickButtonScrollUp() {
+      topicController.send('jumpTop');
+    },
+    clickButtonScrollDown() {
+      topicController.send('jumpBottom');
+    }
+    
+<button class="widget-button btn btn-default popup-menu-button no-text btn-icon discord-mobile-scroll-arrow-up"
+  {{action "clickButtonScrollUp"}}>{{d-icon 'arrow-up'}}</button>
+
+<button class="widget-button btn btn-default popup-menu-button no-text btn-icon discord-mobile-scroll-arrow-down"
   {{action "clickButtonScrollDown"}}>{{d-icon 'arrow-down'}}</button>
 </script>
 
