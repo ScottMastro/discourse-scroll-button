@@ -53,9 +53,38 @@
   api.decorateWidget('after-topic-footer-main-buttons:before', function(helper) {
     return helper.attach('scroll-down-button');
   });
-    api.decorateWidget('topic-footer-buttons:after', function(helper) {
-    return helper.attach('scroll-down-button');
+
+
+  api.registerTopicFooterButton({
+    id: "discourse-custom-topic-button",
+    priority: 0,
+    icon() {
+      if (settings.custom_topic_button_icon.length) {
+        return settings.custom_topic_button_icon;
+      }
+    },
+    translatedLabel() {
+      return "test";
+    },
+    translatedTitle() {
+      return "test";
+    },
+    action() {
+      const topicButtonUrl = "www.google.com";
+      let url = topicButtonUrl
+
+      window.open(url, "_blank");
+    },
+    dropdown() {
+      return this.site.mobileView;
+    },
+    classNames: ["discourse-custom-topic-button"],
+    dependentKeys: ["topic.id", "topic.title", "topic.slug"],
+    displayed() {
+      return true;
+    }
   });
+
   
   
 </script>
