@@ -1,4 +1,8 @@
-scroll_button_enabled:
+timeline_buttons_enabled:
+  default: true
+  client: true
+
+mobile_buttons_enabled:
   default: true
   client: true
 
