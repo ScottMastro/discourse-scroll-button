@@ -44,6 +44,12 @@
     return helper.attach('scroll-down-button');
   });
 
+  api.decorateWidget('topic-progress:before', function(helper) {
+    return helper.attach('scroll-down-button');
+  });
+
+
+
   
   if (settings.jump_button_enabled){
     api.registerTopicFooterButton({
