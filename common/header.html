@@ -52,12 +52,32 @@
     });
   }
   
+  
+  api.createWidget('mobile-scroll-up-button', {
+    tagName: 'widget-button.btn.btn-default.popup-menu-button.no-text.btn-icon.discourse-mobile-scroll-up-button',
+    html(attrs, state) {
+      return h('span', [iconNode('arrow-up')] );
+    },
+    click() {
+      topicController.send('jumpTop');
+    }
+  });
+
+    tagName: 'widget-button.btn.btn-default.popup-menu-button.no-text.btn-icon.discourse-mobile-scroll-down-button',
+    html(attrs, state) {
+      return h('span', [iconNode('arrow-down')] );
+    },
+    click() {
+      topicController.send('jumpBottom');
+    }
+  }); 
+  
 </script>
 
 
 <script type="text/x-handlebars" data-template-name="/connectors/before-topic-progress/mobile-scroll-buttons">
-  {{mount-widget widget="scroll-up-button"}}
-  {{mount-widget widget="scroll-down-button"}}
+  {{mount-widget widget="mobile-scroll-up-button"}}
+  {{mount-widget widget="mobile-scroll-down-button"}}
 
 </script>
 
