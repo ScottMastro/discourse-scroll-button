@@ -59,9 +59,7 @@
     id: "discourse-custom-topic-button",
     priority: 0,
     icon() {
-      if (settings.custom_topic_button_icon.length) {
-        return settings.custom_topic_button_icon;
-      }
+        return iconNode('arrow-up');
     },
     translatedLabel() {
       return "test";
