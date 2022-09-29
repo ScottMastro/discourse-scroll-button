@@ -2,7 +2,7 @@ scroll_button_enabled:
   default: true
   client: true
 
-last_viewed_button_enabled:
+jump_button_enabled:
   default: true
   client: true
 
@@ -14,7 +14,3 @@ jump_button_title:
   default: "jump to the top of this topic"
   client: true
   
-svg_icons: 
-  default: 'bell|bell-slash'
-  type: list
-  description: Additional FontAwesome 5 icons

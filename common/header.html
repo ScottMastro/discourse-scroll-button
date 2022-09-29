@@ -45,23 +45,24 @@
   });
 
   
-  api.registerTopicFooterButton({
-    id: "discourse-jump-button",
-    icon: "arrow-up",
-    priority: 0,
+  if (settings.jump_button_enabled){
+    api.registerTopicFooterButton({
+      id: "discourse-jump-button",
+      icon: "arrow-up",
+      priority: 0,
     
-    translatedLabel() {
-      return settings.jump_button_label;
-    },
-    translatedTitle() {
-      return settings.jump_button_title;
-    },    
-    action() {
-      topicController.send('jumpTop');
-    },
-    classNames: ["discourse-jump-button"],
-  });
-  
+      translatedLabel() {
+        return settings.jump_button_label;
+      },
+      translatedTitle() {
+        return settings.jump_button_title;
+      },    
+      action() {
+        topicController.send('jumpTop');
+      },
+      classNames: ["discourse-jump-button"],
+    });
+  }
   
 </script>
 
