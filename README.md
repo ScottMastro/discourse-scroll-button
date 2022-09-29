@@ -5,7 +5,7 @@ This theme component adds buttons that enable efficient jumping to the beginning
 
 timeline buttons enabled:
 
-<img src="img/timeline.png" width="256">
+<img src="img/timeline.png" width="200">
 
 ---
 
@@ -13,6 +13,7 @@ mobile buttons enabled:
 
 
 <img src="img/mobile.png">
+
 ---
 
 jump button enabled:
