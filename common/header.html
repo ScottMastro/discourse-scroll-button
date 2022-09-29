@@ -64,6 +64,10 @@
 
     // local key path for title attribute
     title: null,
+    
+    action() {
+      topicController.send('jumpTop');
+    },
 
     // already translated title
     translatedTitle: null,
