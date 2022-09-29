@@ -55,30 +55,45 @@
   });
 
 
-  api.registerTopicFooterButton({
-    id: "discourse-custom-topic-button",
-    priority: 0,
-    icon() {
-        return iconNode('arrow-up');
-    },
-    translatedLabel() {
-      return "test";
-    },
-    translatedTitle() {
-      return "test";
-    },
-    action() {
-      topicController.send('jumpTop');
-    },
-    dropdown() {
-      return this.site.mobileView;
-    },
-    classNames: ["discourse-custom-topic-button"],
-    displayed() {
-      return true;
-    }
-  });
+api.registerTopicFooterButton({
+    // id of the button, required
+    id: null,
 
+    // icon displayed on the button
+    icon: null,
+
+    // local key path for title attribute
+    title: null,
+
+    // already translated title
+    translatedTitle: null,
+
+    // local key path for label
+    label: null,
+
+    // already translated label
+    translatedLabel: null,
+
+    // is this button displayed in the mobile dropdown or as an inline button ?
+    dropdown: false,
+
+    // css class appended to the button
+    classNames: [],
+
+    // computed properties which should force a button state refresh
+    // eg: ["topic.bookmarked", "topic.category_id"]
+    dependentKeys: [],
+
+    // should we display this button ?
+    displayed: true,
+
+    // is this button disabled ?
+    disabled: false,
+
+    // display order, higher comes first
+    priority: 0
+  };
+});
   
   
 </script>
