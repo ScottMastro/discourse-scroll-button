@@ -16,7 +16,7 @@
     
   });
   
-  api.modifyClass('component:topic-footer-main-buttons', {
+  api.modifyClass('component:topic-footer-buttons', {
     
     clickButtonScrollUp() {
       topicController.send('jumpTop');
@@ -62,7 +62,7 @@
     return helper.attach('scroll-down-button');
   });
   
-  api.decorateWidget('topic-footer-main-buttons:after', function(helper) {
+  api.decorateWidget('topic-footer-buttons:after', function(helper) {
     return helper.attach('to-top-button');
   });
   
