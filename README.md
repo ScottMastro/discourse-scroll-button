@@ -5,7 +5,7 @@ This theme component adds buttons that enable efficient jumping to the beginning
 
 timeline buttons enabled:
 
-![alt text](img/timeline.png "Logo Title Text 1")
+<img src="img/timeline.png" width="48">
 
 ---
 
