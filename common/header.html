@@ -5,16 +5,6 @@
   const { getOwner } = require("discourse-common/lib/get-owner");
   const topicController = getOwner(this).lookup("controller:topic");
 
-  api.modifyClass('component:topic-timeline', {
-    
-    clickButtonScrollUp() {
-      topicController.send('jumpTop');
-    },
-    clickButtonScrollDown() {
-      topicController.send('jumpBottom');
-    }
-    
-  });
   
     api.modifyClass('component:before-topic-progress', {
     
@@ -35,7 +25,7 @@
       return h('span', [iconNode('arrow-up')] );
     },
     click() {
-      this.sendWidgetAction('clickButtonScrollUp');
+      topicController.send('jumpTop');
     }
   });
 
@@ -45,7 +35,7 @@
       return h('span', [iconNode('arrow-down')] );
     },
     click() {
-      this.sendWidgetAction('clickButtonScrollDown');
+      topicController.send('jumpBottom');
     }
   }); 
     
@@ -55,8 +45,6 @@
   api.decorateWidget('timeline-footer-controls:before', function(helper) {
     return helper.attach('scroll-down-button');
   });
-
-
 
   
   if (settings.jump_button_enabled){
