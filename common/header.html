@@ -68,16 +68,12 @@
       return "test";
     },
     action() {
-      const topicButtonUrl = "www.google.com";
-      let url = topicButtonUrl
-
-      window.open(url, "_blank");
+      topicController.send('jumpTop');
     },
     dropdown() {
       return this.site.mobileView;
     },
     classNames: ["discourse-custom-topic-button"],
-    dependentKeys: ["topic.id", "topic.title", "topic.slug"],
     displayed() {
       return true;
     }
