@@ -48,19 +48,17 @@
   api.registerTopicFooterButton({
     id: "discourse-to-top-button,
     icon: "arrow-up",
-
-    // local key path for title attribute
-    title: null,
     
+    translatedLabel() {
+      return settings.to_top_button_title;
+    },
+    translatedTitle() {
+      return settings.to_top_button_label;
+    },    
     action() {
       topicController.send('jumpTop');
     },
 
-    // already translated title
-    translatedTitle: settings.to_top_button_title,
-
-    // local key path for label
-    label: settings.to_top_button_label,
 
     // is this button displayed in the mobile dropdown or as an inline button ?
     dropdown: false,
