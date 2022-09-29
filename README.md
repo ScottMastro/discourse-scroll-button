@@ -1,3 +1,21 @@
 # discourse-scroll-button
 
-![alt text](img/jump.png "Logo Title Text 1")
+This theme component adds buttons that enable efficient jumping to the beginning and end of topics.
+
+
+timeline buttons enabled:
+
+![alt text](img/timeline.png "Logo Title Text 1")
+
+---
+
+mobile buttons enabled:
+
+![alt text](img/mobile.png "Logo Title Text 1")
+
+
+---
+
+jump button enabled:
+
+![alt text](img/jump.png "Jump button")
