@@ -16,6 +16,14 @@
     
   });
   
+  api.modifyClass('component:topic-footer-main-buttons', {
+    
+    clickButtonScrollUp() {
+      topicController.send('jumpTop');
+    }
+    
+  });
+  
 
   api.createWidget('scroll-up-button', {
     tagName: 'widget-button.btn.btn-default.discourse-scroll-up-button.no-text.btn-icon',
@@ -35,6 +43,16 @@
     click() {
       this.sendWidgetAction('clickButtonScrollDown');
     }
+  }); 
+  
+  api.createWidget('to-top-button', {
+    tagName: 'btn-default.topic-footer-button.discourse-scroll-top-button.btn.btn-icon-text',
+    html(attrs, state) {
+      return h('span', ["To Top", iconNode('arrow-up')] );
+    },
+    click() {
+      this.sendWidgetAction('clickButtonScrollUp');
+    }
   });
   
   api.decorateWidget('timeline-footer-controls:before', function(helper) {
@@ -42,6 +60,10 @@
   });
   api.decorateWidget('timeline-footer-controls:before', function(helper) {
     return helper.attach('scroll-down-button');
+  });
+  
+  api.decorateWidget('topic-footer-main-buttons:after', function(helper) {
+    return helper.attach('to-top-button');
   });
   
 </script>
