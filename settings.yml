@@ -6,6 +6,12 @@ last_viewed_button_enabled:
   default: true
   client: true
 
+to_top_button_label:
+  default: "To Top"
+
+to_top_button_title:
+  default: "jump to the top of this topic"
+
 svg_icons: 
   default: 'bell|bell-slash'
   type: list

@@ -36,30 +36,17 @@
       this.sendWidgetAction('clickButtonScrollDown');
     }
   }); 
-  
-  api.createWidget('to-top-button', {
-    tagName: 'btn-default.topic-footer-button.discourse-scroll-top-button.btn.btn-icon-text',
-    html(attrs, state) {
-      return h('span', ["To Top", iconNode('arrow-up')] );
-    },
-    click() {
-      this.sendWidgetAction('clickButtonScrollUp');
-    }
-  });
-  
+    
   api.decorateWidget('timeline-footer-controls:before', function(helper) {
     return helper.attach('scroll-up-button');
   });
-  api.decorateWidget('after-topic-footer-main-buttons:before', function(helper) {
+  api.decorateWidget('timeline-footer-controls:before', function(helper) {
     return helper.attach('scroll-down-button');
   });
 
   
   api.registerTopicFooterButton({
-    // id of the button, required
-    id: 99,
-
-    // icon displayed on the button
+    id: "discourse-to-top-button,
     icon: "arrow-up",
 
     // local key path for title attribute
@@ -70,13 +57,10 @@
     },
 
     // already translated title
-    translatedTitle: null,
+    translatedTitle: settings.to_top_button_title,
 
     // local key path for label
-    label: "To Top",
-
-    // already translated label
-    translatedLabel: null,
+    label: settings.to_top_button_label,
 
     // is this button displayed in the mobile dropdown or as an inline button ?
     dropdown: false,
