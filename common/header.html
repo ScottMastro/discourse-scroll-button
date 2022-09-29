@@ -5,7 +5,7 @@
   const { getOwner } = require("discourse-common/lib/get-owner");
   const topicController = getOwner(this).lookup("controller:topic");
 
-  api.modifyClass('component:before-topic-progress', {
+  api.modifyClass('component:topic-progress-wrapper', {
     
     clickButtonScrollUp() {
       topicController.send('jumpTop');
@@ -37,10 +37,10 @@
     }
   }); 
     
-  api.decorateWidget('before-topic-progress:before', function(helper) {
+  api.decorateWidget('topic-progress-wrapper:before', function(helper) {
     return helper.attach('scroll-up-button');
   });
-  api.decorateWidget('before-topic-progress:before', function(helper) {
+  api.decorateWidget('topic-progress-wrapper:before', function(helper) {
     return helper.attach('scroll-down-button');
   });
 
